@@ -28,7 +28,7 @@ class ProjectHelper:
         self.open_project_list()
         project_list = []
         for el in wd.find_elements_by_css_selector("td > a[href*='manage_proj_edit_page.php?project_id']"):
-            id = el.get_attribute('search')[12]
+            id = el.get_attribute('search')[12:]
             name = el.text
             project_list.append(Project(name=name, id=id))
         return project_list
